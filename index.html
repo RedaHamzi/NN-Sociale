@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/myFreamwork.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>achat-forfait</title>
+</head>
+<body>
+    <div id="app">
+        <div class="page" :style="{'overflow': clicked? 'hidden': '', 'height': clicked? '100vh' : ''}">
+            <div class="header py-20 w-full">
+                <div class="container d-flex justify-content-between align-center">
+                    <div class="gap-10">
+                        <div class="icon circle fs-20 c-white flex-center">
+                            <i class="fa fa-question"></i>
+                        </div>
+                        <div class="icon circle fs-25 c-white flex-center fw-600">
+                            AR
+                        </div>
+                    </div>
+                    <div class="c-white d-not-mb-none fs-25" @click="clicked = !clicked" v-html="clicked? xIcon:toggleMenu"></div>
+                    <div class="logo">
+                        <img src="./imgs/NN Social.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <!--this is a seperator-->
+            <div class="content">
+                <div 
+                    :style="{'transform': clicked? 'translateX(288px)':''}"
+                    class="sections">
+                    <!--this is a seperator-->
+                    <div class="sub-header py-15">
+                        <div class="container d-flex justify-content-between align-center">
+                            <h2 class="c-white fs-not-mb-30 fs-mb-20 t-uppercase">mon compte</h2>
+                            <div class="my-number c-white fs-20 fw-500"><span class="d-mb-none">Mon numero</span> <span class="num d-inline-block p-5 r-5">1703190003</span></div>
+                        </div>
+                    </div>
+                    <!--this is a seperator-->
+                    <div class="freefire-title py-15">
+                        <div class="container">
+                            <h2 class="c-white fs-not-mb-30 fs-mb-20 t-uppercase">free fire exclusivite NN Social</h2>
+                        </div>
+                    </div>
+                    <!--this is a seperator-->
+                    <section class="landing py-30">
+                        <div class="container d-flex position-relative">
+                            <img class="bg position-relative r-10" src="./imgs/bg.png" alt="">
+                            <div class="box mt-auto position-absolute">
+                                <img src="./imgs/bar.png" alt="">
+                                <p class="c-white fw-600 fs-mb-12  fs-not-mb-25">Obtenez votre pack de diamants en cliquant sur le bouton ci-dessous</p>
+                                <button class="btn btn-warning fw-700 fs-not-mb-40 fs-mb-20 t-uppercase mt-15 r-15">obtenir maintenant</button>
+                            </div>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <section class="offre py-30">
+                        <div class="container gap-20">
+                            <!--start special card-->
+                            <div :style="{'display': opened? 'none': ''}" class="sp-card  px-7 pb-15 pt-30 bg-light column gap-10">
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <span>credit total</span>
+                                    </div>
+                                    <div>
+                                        <span class="d-block price">970,00 <span class="fs-10">DA</span></span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span>credit recharge</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">0,00 <span class="fs-10">DA</span></span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="fs-14">total internet</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">314,70 <span class="fs-10">Mo</span></span>                        </div>
+                                </div>
+                            </div>
+                            <!--end of special card-->
+                            <div :style="{'display': opened? 'flex': ''}" class="card position-relative px-7 pb-15 pt-30 r-10 bg-light column gap-10">
+                                <div class="card-title py-5 px-10 fs-17 c-white t-capitalize r-5 w-fit position-absolute">credit</div>
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa-brands fa-facebook"></i>
+                                        <span>credit total</span>
+                                    </div>
+                                    <div>
+                                        <span class="d-block price">970,00 <span class="fs-10">DA</span></span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span>forfait</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">398,00 <span class="fs-10">DA</span></span>
+                                        <span class=" date fs-10">au 21/09/2023</span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="fs-14">forfait de mois precedent</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">572,00 <span class="fs-10">DA</span></span>
+                                        <span class=" date fs-10">au 21/09/2023</span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20  fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="fs-14">credit de recharge</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">0,00 <span class="fs-10">DA</span></span>
+                                        <span class=" date fs-10">au 21/09/2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--this is a seperator-->
+                            <div :style="{'display': opened? 'flex': ''}" class="card position-relative  px-7 pb-15 pt-30 r-10 bg-light column gap-10">
+                                <div 
+                                    class="card-title py-5 px-10 fs-17 c-white t-capitalize r-5 w-fit position-absolute"
+                                >internet</div>
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa-brands fa-youtube"></i>
+                                        <span>total internet</span>
+                                    </div>
+                                    <div>
+                                        <span class="d-block price">314,70 <span class="fs-10">Mo</span></span>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="bar px-20 pb-10 mb-5 fs-18  d-flex justify-content-between">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span>forfait mensuel</span>
+                                    </div>
+                                    <div class="d-flex column">
+                                        <span class=" price">398,00 <span class="fs-10">DA</span></span>
+                                        <span class=" date fs-10">au 21/09/2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--this is a seperator-->
+                            <div :style="{'display': opened? 'flex': ''}" class="card position-relative px-7 pb-15 pt-30 r-10 bg-light column gap-10">
+                                <div 
+                                    class="card-title py-5 px-10 fs-17 c-white t-capitalize r-5 w-fit position-absolute"
+                                >appels</div>
+                                <div class="px-20 fs-18  d-flex justify-content-start">
+                                    <div class="t-capitalize">
+                                        <i class="fa fa-globe"></i>
+                                        <span>appel internationaux</span>
+                                    </div>
+                                </div>
+                                <div class="bar px-20 pb-10 mb-5 fs-18 d-flex gap-15 align-items-center">
+                                    <div class="progress position-relative flex-1"></div>
+                                    <div class="d-flex column">
+                                        <span class="price mx-auto">10<span class="fs-10">Min</span></span>
+                                        <span class="date fs-10">au 21/09/2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button
+                                class="btn btn-light fs-17 fw-700 t-capitalize d-not-mb-none"
+                                v-text="opened ? 'close': 'open'"
+                                @click="opened = !opened"
+                            ></button>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <div class="internet-offrs-title py-15">
+                        <div class="container">
+                            <h2 class="c-white fs-not-mb-30 fs-mb-20 t-uppercase">switcher prochain forfait</h2>
+                        </div>
+                    </div>
+                    <!--this is a seperator-->
+                    <section class="internet-offrs py-30">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="card p-15 r-10 bg-white d-flex column gap-20">
+                                        <div class="info-box d-flex align-items-end column position-relative">
+                                            <div class="t-left">
+                                                <h3 class="fs-mb-30 fs-not-mb-40">
+                                                    <div class="position-relative d-inline-block mr-20">120 <span class="position-absolute fs-mb-14 fs-14">Go</span></div>Internet
+                                                </h3>
+                                                <p class="fs-15 fw-600 mb-0">+ Appels gratuit vers NN Social</p>
+                                                <p class="fs-15 fw-600 mb-0">+ 30 Minutes intenationales</p>
+                                                <p class="fs-15 fw-600">+ 2500 Da de credit</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="price fw-600 fs-mb-30 fs-not-mb-40 position-relative">2500 <span class="fs-14 position-absolute">Da</span></div>
+                                            <button class="btn btn-danger t-capitalize fs-20">
+                                                <i class="fa fa-scope"></i>
+                                                switcher
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a seperator-->
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="card p-15 r-10 bg-white d-flex column gap-20">
+                                        <div class="info-box d-flex align-items-end column position-relative">
+                                            <div class="t-left">
+                                                <h3 class="fs-mb-30 fs-not-mb-40">
+                                                    <div class="position-relative d-inline-block mr-20">300 <span class="position-absolute fs-mb-14 fs-14">Go</span></div>Internet
+                                                </h3>
+                                                <p class="fs-15 fw-600 mb-0">+ Appels gratuit vers NN Social</p>
+                                                <p class="fs-15 fw-600 mb-0">+ 50 Minutes internationales</p>
+                                                <p class="fs-15 fw-600">+ 4000 Da de credit</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="price fw-600 fs-mb-30 fs-not-mb-40 position-relative">2500 <span class="fs-14 position-absolute">Da</span></div>
+                                            <button class="btn btn-danger t-capitalize fs-20">
+                                                <i class="fa fa-scope"></i>
+                                                switcher
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <div class="forfait-internet-title py-15">
+                        <div class="container">
+                            <h2 class="c-white fs-not-mb-30 fs-mb-20 t-uppercase">forfait internet</h2>
+                        </div>
+                    </div>
+                    <!--this is a seperator-->
+                    <section class="forfait-internet py-30">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">50 Mo</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <img src="./imgs/facebook.svg" alt="">
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                50 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a col seperator-->
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">1.4 Go</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <img src="./imgs/youtube.png" alt="">
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                100 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a col seperator-->
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">6 Go</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <img src="./imgs/youtube.png" alt="">
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                300 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a col seperator-->
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">50 Mo</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <span class="red fs-not-mb-30 fs-mb-20">coupons fayda</span>
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                100 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a col seperator-->
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">50 Mo</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <img src="./imgs/youtube.png" alt="">
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                100 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--this is a col seperator-->
+                                <div class="col-md-4">
+                                    <div class="card p-15 r-15 d-flex column gap-30 text-center bg-white">
+                                        <div class="d-flex column gap-10">
+                                            <span class="red d-block fs-not-mb-40 fs-mb-20">50 Mo</span>
+                                            <span class="d-block fs-20">+</span>
+                                            <span class="d-block position-relative">
+                                                <img src="./imgs/youtube.png" alt="">
+                                                <span class="red fw-700 fs-14 position-absolute start-right">illimite</span>
+                                            </span>
+                                        </div>
+                                        <div class="d-flex column">
+                                            <p class="fs-15">valables <b>24 heures</b></p>
+                                            <span class="red fs-not-mb-40 fs-mb-20 position-relative">
+                                                100 <span class="position-absolute start-right fs-mb-14 fs-not-mb-17">Da</span>
+                                            </span>
+                                            <button class="c-white fs-17 py-15 fw-600 w-full rounded-pill">Acheter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <section class="facebook-title py-15">
+                        <div class="container">
+                            <h2 class="c-white fs-not-mb-30 fs-mb-20 t-uppercase">facebook gratuit</h2>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <section class="facebook py-30">
+                        <div class="container">
+                            <div class="card p-20 d-flex justify-content-between bg-white r-10">
+                                <div class="pl-15 py-10"><img src="./imgs/facebook-stuff.png" alt=""></div>
+                                <div class="info d-flex column justify-content-between">
+                                    <h2>Facebook gratuit et illimite</h2>
+                                    <p class="fs-not-mb-23">Commentez, partagez et suivez l’actualité sur facebook <b>gratuitement</b></p>
+                                    <button class="btn btn-danger w-fit px-20 py-10 fw-600">Decouvrir maintenant</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <section class="bg-grey py-15">
+                        <div class="container">
+                            <h2 class="c-black fs-not-mb-30 fs-mb-20 t-uppercase">recharge</h2>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <section class="recharge bg-light py-30">
+                        <div class="container">
+                            <div class="card justify-content-between d-flex bg-white r-10 overflow-hidden">
+                                <div class="w-50">
+                                    <div class="w-full h-100"></div>
+                                </div>
+                                <div class="info d-flex column gap-20 px-30 py-20">
+                                    <h2>Rechargement en lign</h2>
+                                    <p class="fs-not-mb-23">a partir de votre carte CIB</p>
+                                    <button class="btn btn-danger w-fit px-20 py-10 fw-600">Recharge Maintenant</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--this is a seperator-->
+                    <footer class="py-15 t-center t-capitalize c-white bg-dark fs-15">
+                        &copy; copyright {{ date }} NN Social
+                    </footer>
+                </div>
+                <!--this is a seperator-->
+                <div
+                    :style="{'transform': clicked? 'translateX(0)':''}" 
+                    class="menu column c-white">
+                    <div class="bar">Changer de langue</div>
+                    <div class="bar">Comment recharger ma lign ?</div>
+                    <div class="bar">Besoin d'aide ?</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<script src="./js/all.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+     var app = new Vue({
+        el: "#app",
+        data: {
+            clicked: false,
+            toggleMenu: `<i class="fas fa-bars toggle-menu"></i>`,
+            xIcon: `<i class="fa-solid fa-xmark"></i>`,
+            opened: false,
+            date: new Date().getFullYear(),
+        }
+     })
+</script>
+</body>
+</html>
